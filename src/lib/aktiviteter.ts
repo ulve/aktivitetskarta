@@ -10,7 +10,9 @@ export default [
     {
         "img": "bil.png",
         "title": "Åka Bil",
-    }, {
+        "favorite": true
+    },
+    {
         "img": "duscha.png",
         "title": "Duscha",
     },
@@ -41,6 +43,8 @@ export default [
     {
         "img": "rita.png",
         "title": "Rita",
+        "favorite": true
+
     },
     {
         "img": "skrana.png",
