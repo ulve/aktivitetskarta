@@ -1,16 +1,46 @@
 <script lang="ts">
 	import aktiviteter from '$lib/aktiviteter';
 	import Header from '$lib/Header.svelte';
+	// aktiviteter where tile no Valle or Pappa
+	const aktiviteterFiltered = aktiviteter.filter(
+		(aktivitet) => aktivitet.title !== 'Valle' && aktivitet.title !== 'Pappa'
+	);
+
+	// on click on aktivitet
+	function click() {
+		// show vem
+		document.getElementById('vem').style.display = 'flex';
+		// hide känslor
+		document.getElementById('aktiviteter').style.display = 'none';
+	}
+
+	function clack() {
+		// show känslor
+		document.getElementById('aktiviteter').style.display = 'flex';
+		// hide vem
+		document.getElementById('vem').style.display = 'none';
+	}
 </script>
 
 <Header />
-<div class="container" id="känslor">
-	{#each aktiviteter as aktivitet}
-		<div class="aktivitet">
+<div class="container" id="aktiviteter">
+	{#each aktiviteterFiltered as aktivitet}
+		<div class="aktivitet" on:click={click}>
 			<img src={aktivitet.img} alt={aktivitet.title} />
 			<h2>{aktivitet.title}</h2>
 		</div>
 	{/each}
+</div>
+
+<div class="container" id="vem" style="display:none">
+	<div class="aktivitet" on:click={clack}>
+		<img src="valle.png" alt="Valle" />
+		<h2>Själv</h2>
+	</div>
+	<div class="aktivitet" on:click{clack}>
+		<img src="pappa.png" alt="Pappa" />
+		<h2>Med pappa</h2>
+	</div>
 </div>
 
 <style>
