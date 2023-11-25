@@ -37,7 +37,7 @@
 		<img src="valle.png" alt="Valle" />
 		<h2>Själv</h2>
 	</div>
-	<div class="aktivitet" on:click{clack}>
+	<div class="aktivitet" on:click={clack}>
 		<img src="pappa.png" alt="Pappa" />
 		<h2>Med pappa</h2>
 	</div>
