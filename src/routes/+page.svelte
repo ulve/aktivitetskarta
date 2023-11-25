@@ -57,6 +57,9 @@
 		<img src={selectedAktivitet.img} alt={selectedAktivitet.title} />
 		<h2>{selectedAktivitet.title}</h2>
 	</div>
+	<div class="med">
+		<h2>med</h2>
+	</div>
 
 	<div class="aktivitet" on:click={clack}>
 		<img src="valle.png" alt="Valle" />
@@ -97,6 +100,16 @@
 		width: 8rem;
 		height: 8rem;
 		transform: rotate(-10deg);
+	}
+
+	.med {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		padding: 1rem;
+		max-width: 10rem;
 	}
 
 	.aktivitet {
